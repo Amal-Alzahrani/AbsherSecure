@@ -1,0 +1,27 @@
+﻿@model AbsherSecure1.Models.RenewalRequest
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "تجديد";
+}
+<h2 class ="text-center mb-4">تجديد الهوية</h2>
+
+<div class="form-card">
+    <form asp-action="Index" method="post">
+        @Html.AntiForgeryToken()
+        <div class="form-row">
+            <label>الاسم كامل</label>
+            <input name="FullName" required />
+        </div>
+        <div class="form-row">
+            <label>رقم الهوية</label>
+            <input name="IdNumber" required />
+        </div>
+
+        <div style="display:flex; gap:12px;">
+            <label><input type="checkbox" name="EditData" /> تعديل البيانات</label>
+            <label><input type="checkbox" name="ConfirmNow" /> تأكيد فوري</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">التالي - تحقق بيومتري</button>
+    </form>
+</div>

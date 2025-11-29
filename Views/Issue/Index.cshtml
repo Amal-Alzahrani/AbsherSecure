@@ -1,0 +1,94 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "إصدار";
+}
+
+<h2 class="text-center mb-4">خدمة الإصدار</h2>
+
+<div class="services-grid">
+
+    <div class="service-card animate-card">
+        <h3>إصدار هوية جديدة</h3>
+        <a href="/Issue/NewID"><button class="btn btn-primary">إصدار هوية</button></a>
+    </div>
+
+    <div class="service-card animate-card">
+        <h3>إصدار جواز سفر</h3>
+        <a href="/Issue/Passport"><button class="btn btn-primary">جواز سفر</button></a>
+    </div>
+
+    <div class="service-card animate-card">
+        <h3>إصدار تأشيرة</h3>
+        <a href="/Issue/Visa"><button class="btn btn-primary">تأشيرة</button></a>
+    </div>
+
+</div>
+
+<style>
+
+    /* الشبكة */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        padding: 20px;
+        direction: rtl;
+    }
+
+    /* البطاقة الأساسية */
+    .service-card {
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        text-align: center;
+        transition: 0.3s ease;
+        border: 1px solid #e0e0e0;
+    }
+
+        /* حركة عند المرور */
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border-color: #2ca87f;
+        }
+
+        /* العنونة */
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #1d5f4a;
+        }
+
+        /* الزر */
+        .service-card button {
+            width: 100%;
+            font-size: 16px;
+            padding: 12px;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+
+            /* حركة الزر */
+            .service-card button:hover {
+                transform: scale(1.05);
+            }
+
+    /* ظهور لطيف – Animation */
+    .animate-card {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s ease forwards;
+    }
+
+        .animate-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .animate-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+   
+</style>

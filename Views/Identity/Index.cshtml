@@ -1,0 +1,27 @@
+﻿@model AbsherSecure1.Models.UserIdentity
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "هويتي الرقمية";
+}
+
+<h2 class ="text-center mb-4">هويتي الرقمية</h2>
+
+<div class="form-card">
+    <div class="form-row"><label>الاسم الكامل</label><div>@Model.FullName</div></div>
+    <div class="form-row"><label>رقم الهوية</label><div>@Model.IdNumber</div></div>
+    <div class="form-row"><label>تاريخ الإصدار</label><div>@Model.IssueDate</div></div>
+    <div class="form-row"><label>تاريخ الانتهاء</label><div>@Model.ExpiryDate</div></div>
+    <div class="form-row"><label>رقم التتبع</label><div>@Model.TrackingNumber</div></div>
+    <div class="form-row">
+        <label>حالة الجهات الحكومية</label>
+        @foreach (var s in Model.Services)
+        {
+            <div style="margin-bottom:6px;">
+                <strong>@s.Name</strong>
+                <span class="service-status @(s.IsActive ? "active" : "inactive")" style="margin-left:10px;">
+                    @(s.IsActive ? "فعال" : "غير فعال")
+                </span>
+            </div>
+        }
+    </div>
+</div>

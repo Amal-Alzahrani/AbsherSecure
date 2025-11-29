@@ -1,0 +1,42 @@
+﻿@model AbsherSecure1.Models.ReportModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "رفع بلاغ";
+}
+
+<h2 class ="text-center mb-4">رفع بلاغ فقدان الهوية</h2>
+
+<div class="form-card">
+    @if (TempData["ReportSent"] != null)
+    {
+        <div style="padding:10px;background:#e9f7ef;border-radius:6px;margin-bottom:12px;">
+            @TempData["ReportSent"]
+        </div>
+    }
+
+    <form asp-action="Index" method="post" enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+
+        <div class="form-row">
+            <label>الاسم الكامل</label>
+            <input name="FullName" required />
+        </div>
+
+        <div class="form-row">
+            <label>رقم الهوية</label>
+            <input name="IdNumber" required />
+        </div>
+
+        <div class="form-row">
+            <label>وصف الحادث</label>
+            <textarea name="Description" rows="4"></textarea>
+        </div>
+
+        <div class="form-row">
+            <label>صورة/مرفق (اختياري)</label>
+            <input type="file" name="Attachment" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">إرسال البلاغ</button>
+    </form>
+</div>

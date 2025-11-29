@@ -1,0 +1,71 @@
+﻿@model AbsherSecure1.Models.NewIDRequest
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "إصدار هوية جديدة";
+}
+
+<h2 class="text-center mb-4">إصدار هوية جديدة</h2>
+
+<div class="card shadow p-4" style="max-width: 650px; margin: auto; direction: rtl;">
+    <form asp-action="NewID" method="post" enctype="multipart/form-data">
+
+        <!-- الاسم الكامل -->
+        <div class="mb-3">
+            <label class="form-label">الاسم الكامل</label>
+            <input asp-for="FullName" class="form-control" />
+        </div>
+
+        <!-- رقم الهوية -->
+        <div class="mb-3">
+            <label class="form-label">رقم الهوية</label>
+            <input asp-for="NationalId" class="form-control" pattern="^\d{10}$" title="10 أرقام فقط" placeholder="مثال: 1234567890" />
+        </div>
+
+        <!-- تاريخ الميلاد -->
+        <div class="mb-3">
+            <label class="form-label">تاريخ الميلاد</label>
+            <input asp-for="DateOfBirth" type="date" class="form-control" />
+        </div>
+
+        <!-- الجنس -->
+        <div class="mb-3">
+            <label class="form-label">الجنس</label>
+            <select asp-for="Gender" class="form-select">
+                <option value="Male">ذكر</option>
+                <option value="Female">أنثى</option>
+            </select>
+        </div>
+
+        <!-- المدينة -->
+        <div class="mb-3">
+            <label class="form-label">المدينة</label>
+            <input asp-for="City" class="form-control" />
+        </div>
+
+        <!-- الحي -->
+        <div class="mb-3">
+            <label class="form-label">الحي</label>
+            <input asp-for="District" class="form-control" />
+        </div>
+
+        <!-- الشارع -->
+        <div class="mb-3">
+            <label class="form-label">الشارع</label>
+            <input asp-for="Street" class="form-control" />
+        </div>
+
+        <!-- فصيلة الدم -->
+        <div class="mb-3">
+            <label class="form-label">فصيلة الدم</label>
+            <input asp-for="BloodType" class="form-control" />
+        </div>
+
+        <!-- صورة شخصية -->
+        <div class="mb-3">
+            <label class="form-label">صورة شخصية</label>
+            <input asp-for="Photo" type="file" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">التالي</button>
+    </form>
+</div>

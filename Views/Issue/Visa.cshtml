@@ -1,0 +1,83 @@
+﻿@model AbsherSecure1.Models.VisaRequest
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "إصدار التأشيرة";
+}
+
+<div class="container mt-5" style="max-width: 650px;">
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white text-center " style="background-color:#3BB77E;">
+            <h4 class="mt-2">إصدار التأشيرة</h4>
+        </div>
+
+        <div class="card-body p-4">
+
+            <form asp-action="Visa" method="post" enctype="multipart/form-data">
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">نوع التأشيرة</label>
+                    <select asp-for="VisaType" class="form-control">
+                        <option>زيارة</option>
+                        <option>خروج وعودة</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">رقم الهوية</label>
+                    <input asp-for="NationalId" class="form-control" />
+                    <span asp-validation-for="NationalId" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">رقم الجواز</label>
+                    <input asp-for="PassportNumber" class="form-control" />
+                    <span asp-validation-for="PassportNumber" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">الجهة / الكفيل</label>
+                    <input asp-for="EmployerOrSponsor" class="form-control" />
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">من تاريخ</label>
+                        <input asp-for="FromDate" type="date" class="form-control" />
+                        <span asp-validation-for="FromDate" class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">إلى تاريخ</label>
+                        <input asp-for="ToDate" type="date" class="form-control" />
+                        <span asp-validation-for="ToDate" class="text-danger small"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">سبب الزيارة</label>
+                    <input asp-for="Purpose" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">العنوان في السعودية</label>
+                    <input asp-for="AddressInSaudi" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">مستندات داعمة</label>
+                    <input asp-for="SupportingDocument" type="file" class="form-control" />
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 py-2">
+                    إصدار التأشيرة
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

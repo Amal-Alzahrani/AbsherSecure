@@ -1,0 +1,217 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "التحقق البيومتري";
+}
+
+<style>
+    .section-box {
+        width: 300px;
+        background: #fff;
+        border: 1px solid #dcdcdc;
+        padding: 18px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px #eee;
+        text-align: center;
+        margin: 15px;
+    }
+
+    footer {
+        padding: 5px !important;
+        font-size: 12px !important;
+    }
+
+    .finger-img {
+        width: 150px;
+        opacity: 0.3;
+        transition: 0.4s;
+    }
+
+        .finger-img.active {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+    .camera-box {
+        width: 280px;
+        height: 200px;
+        background: black;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: auto;
+    }
+
+    #faceBox {
+        border: 3px solid red;
+        position: absolute;
+        width: 130px;
+        height: 130px;
+        top: 35px;
+        left: 75px;
+        border-radius: 10px;
+        transition: .2s;
+    }
+
+    #capturedImg, #fingerCaptured {
+        width: 120px;
+        margin-top: 10px;
+        border-radius: 8px;
+        display: none;
+    }
+
+    .success-icon {
+        color: green;
+        font-size: 20px;
+        font-weight: bold;
+        display: none;
+        margin-top: 8px;
+    }
+</style>
+
+<h2 style="text-align:center;margin-bottom:20px;">التحقق </h2>
+
+<div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;">
+
+    <!-- بصمة الوجه -->
+    <div class="section-box">
+        <h4>تحقق بصمة الوجه</h4>
+
+        <div class="camera-box">
+            <video id="camera" autoplay playsinline width="280" height="200"></video>
+            <div id="faceBox"></div>
+        </div>
+
+        <button id="startFace" class="btn btn-success" style="margin-top:10px;width:100%;">بدء التحقق</button>
+
+        <div class="success-icon" id="faceSuccess">✔ تم الالتقاط</div>
+        <img id="capturedImg" />
+    </div>
+
+    <!-- بصمة الإصبع -->
+    <div class="section-box">
+        <h4>تحقق بصمة الإصبع</h4>
+
+        <img src="/images/fingerprint2.jpg" id="fingerIcon" class="finger-img" />
+
+        <button id="startFinger" class="btn btn-success" style="margin-top:10px;width:100%;">بدء البصمة</button>
+
+        <div class="success-icon" id="fingerSuccess">✔ تم التحقق بالبصمة</div>
+        <img id="fingerCaptured" src="/images/fingerprint2.jpg" />
+    </div>
+</div>
+
+<div style="text-align:center;margin-top:20px;margin-bottom:50px;">
+    <button id="endRequest" class="btn btn-primary" disabled style="padding:10px 30px;font-size:18px;">
+        إنهاء الطلب
+    </button>
+</div>
+
+<script>
+
+        //--------------------------
+        // تشغيل الكاميرا
+        //--------------------------
+        let video = document.getElementById("camera");
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => video.srcObject = stream)
+            .catch(err => alert("فشل تشغيل الكاميرا"));
+
+        //--------------------------
+        // حالات التحقق
+        //--------------------------
+        let faceDone = false;
+        let fingerDone = false;
+
+        function checkAllDone() {
+            if (faceDone && fingerDone) {
+                let btn = document.getElementById("endRequest");
+                btn.disabled = false;
+                btn.style.opacity = "1";
+                btn.style.cursor = "pointer";
+            }
+        }
+
+        //--------------------------
+        // محاكاة اكتشاف الوجه + الالتقاط
+        //--------------------------
+        let faceBox = document.getElementById("faceBox");
+        let faceSuccess = document.getElementById("faceSuccess");
+        let capturedImg = document.getElementById("capturedImg");
+        let canvas = document.createElement("canvas");
+
+        document.getElementById("startFace").onclick = () => {
+
+            faceSuccess.style.display = "none";
+            capturedImg.style.display = "none";
+            faceBox.style.borderColor = "red";
+
+            let stableCount = 0;
+
+            let interval = setInterval(() => {
+
+                // محاكاة نجاح اكتشاف الوجه
+                let detected = true;
+
+                if (detected) {
+                    faceBox.style.
+    borderColor = "lime";
+                    stableCount++;
+                } else {
+                    faceBox.style.borderColor = "red";
+                    stableCount = 0;
+                }
+
+                if (stableCount >= 6) {
+                    clearInterval(interval);
+
+                    canvas.width = 280;
+                    canvas.height = 200;
+
+                    let ctx = canvas.getContext("2d");
+                    ctx.drawImage(video, 0, 0, 280, 200);
+
+                    capturedImg.src = canvas.toDataURL("image/png");
+                    capturedImg.style.display = "block";
+
+                    faceSuccess.style.display = "block";
+
+                    faceDone = true;
+                    checkAllDone();
+                }
+
+            }, 500);
+        };
+
+        //--------------------------
+        // محاكاة تحقق بصمة الإصبع
+        //--------------------------
+        document.getElementById("startFinger").onclick = () => {
+
+            let finger = document.getElementById("fingerIcon");
+            let fingerCaptured = document.getElementById("fingerCaptured");
+            let ok = document.getElementById("fingerSuccess");
+
+            finger.classList.add("active");
+            ok.style.display = "none";
+            fingerCaptured.style.display = "none";
+
+            setTimeout(() => {
+                finger.classList.remove("active");
+                ok.style.display = "block";
+                fingerCaptured.style.display = "block";
+
+                fingerDone = true;
+                checkAllDone();
+
+            }, 3000);
+        };
+
+
+        //--------------------------
+        // الانتقال لصفحة النجاح
+        //--------------------------
+        document.getElementById("endRequest").onclick = () => {
+            window.location.href = "/Issue/Success";
+        };
+
+</script>
