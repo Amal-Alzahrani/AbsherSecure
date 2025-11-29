@@ -10,10 +10,9 @@
 
 
 *واجهة المشروع:
+-[واجهة المشروع](https://drive.google.com/uc?export=view&id=1pMF4u3aluHxoz307iupCCO7PZcoHBw2D)
 
--[واجهة المشروع](https://drive.google.com/uc?export=view&id=1pMF4u3aluHxoz307iupCCO7JcoHBw2D)  
-
--[الخدمات](https://drive.google.com/uc?export=view&id=1eXO4nlJbwpaJ3ihQRtnp-R7Jigmvt3Qi)  
+-[الخدمات](https://drive.google.com/uc?export=view&id=1eXO4nlJbwpaJ3ihQRtnp-R7Jigmvt3Qi) 
 
 
 *رابط الملفات والصور:
