@@ -10,13 +10,15 @@
 
 
 *واجهة المشروع:
+
 -[واجهة المشروع](https://drive.google.com/uc?export=view&id=1p8HiyirjZzaTNI71XaznIZZxzjpkilXq)
+
 -[الخدمات](https://drive.google.com/uc?export=view&id=1_WbKfEzOJJkVGoTPROE9Xy0Q-pJk7CXP) 
 
 
 *رابط الملفات والصور:
 
-- مجلد الصور مع فديو توضيحي للموقع على Google Drive: [AbsherSecure Screenshots](https://drive.google.com/drive/folders/10AaBs97itv-m-WwUIFviZQf-pgDjX2lh)  
+- مجلد الصور مع فيديو توضيحي للموقع على Google Drive: [AbsherSecure Screenshots](https://drive.google.com/drive/folders/10AaBs97itv-m-WwUIFviZQf-pgDjX2lh)  
 
 - رابط المشروع على GitHub: [AbsherSecure على GitHub](https://github.com/Amal-Alzahrani/AbsherSecure)
 
