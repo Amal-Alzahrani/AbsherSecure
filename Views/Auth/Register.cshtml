@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="form-card">
+    <h2>إنشاء حساب جديد</h2>
+
+    <form method="post">
+        <div class="form-row">
+            <label>رقم الهوية</label>
+            <input type="text" name="NationalID" required />
+        </div>
+
+        <div class="form-row">
+            <label>الاسم الكامل</label>
+            <input type="text" name="FullName" required />
+        </div>
+
+        <div class="form-row">
+            <label>رقم الجوال</label>
+            <input type="text" name="Phone" required />
+        </div>
+
+        <div class="form-row">
+            <label>كلمة المرور</label>
+            <input type="password" name="Password" required />
+        </div>
+
+        <button class="btn btn-success" type="submit">إنشاء الحساب</button>
+    </form>
+    
+</div>

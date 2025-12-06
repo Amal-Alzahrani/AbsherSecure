@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AbsherSecure1.Models
 {
@@ -21,7 +22,7 @@ namespace AbsherSecure1.Models
         public string Purpose { get; set; }
 
         public string AddressInSaudi { get; set; }
-
+        [NotMapped]
         public IFormFile SupportingDocument { get; set; }
     }
 }

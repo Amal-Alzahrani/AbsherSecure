@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace AbsherSecure1.Models
 {
     public class UserIdentity
     {
+        [Key]
+        public int Id { get; set; }
         [Required(ErrorMessage = "الاسم الكامل مطلوب")]
         public string FullName { get; set; }
         [Required(ErrorMessage = "رقم الهوية مطلوب")]
@@ -19,6 +22,8 @@ namespace AbsherSecure1.Models
 
     public class GovernmentService
     {
+        [Key]
+        public int Id { get; set; }
         public string Name { get; set; }
         public bool IsActive { get; set; }
     }

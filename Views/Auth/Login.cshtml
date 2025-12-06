@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="form-card">
+    <h2>تسجيل الدخول</h2>
+
+    <form method="post">
+        <div class="form-row">
+            <label>رقم الهوية</label>
+            <input type="text" name="nationalID" required />
+        </div>
+
+        <div class="form-row">
+            <label>كلمة المرور</label>
+            <input type="password" name="password" required />
+        </div>
+
+        @if (ViewBag.Error != null)
+        {
+            <p style="color:red">@ViewBag.Error</p>
+        }
+
+        <button class="btn btn-primary" type="submit">دخول</button>
+
+        <p style="margin-top:10px">
+            ليس لديك حساب؟ <a href="/Auth/Register">إنشاء حساب</a>
+        </p>
+    </form>
+</div>

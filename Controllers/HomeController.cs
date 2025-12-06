@@ -20,8 +20,13 @@ namespace AbsherSecure1.Controllers
 
         public IActionResult Services()
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserID")))
+                return RedirectToAction("Login", "Auth");
+
             return View();
         }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

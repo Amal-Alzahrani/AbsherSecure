@@ -24,48 +24,48 @@
 
                 <div class="mb-3">
                     <label class="form-label fw-bold">رقم الهوية</label>
-                    <input asp-for="NationalId" class="form-control" />
+                    <input asp-for="NationalId" class="form-control" required />
                     <span asp-validation-for="NationalId" class="text-danger small"></span>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label fw-bold">رقم الجواز</label>
-                    <input asp-for="PassportNumber" class="form-control" />
+                    <input asp-for="PassportNumber" class="form-control" required />
                     <span asp-validation-for="PassportNumber" class="text-danger small"></span>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label fw-bold">الجهة / الكفيل</label>
-                    <input asp-for="EmployerOrSponsor" class="form-control" />
+                    <input asp-for="EmployerOrSponsor" class="form-control" required />
                 </div>
 
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label class="form-label fw-bold">من تاريخ</label>
-                        <input asp-for="FromDate" type="date" class="form-control" />
+                        <input asp-for="FromDate" type="date" class="form-control" required />
                         <span asp-validation-for="FromDate" class="text-danger small"></span>
                     </div>
 
                     <div class="col-md-6 mb-3">
                         <label class="form-label fw-bold">إلى تاريخ</label>
-                        <input asp-for="ToDate" type="date" class="form-control" />
+                        <input asp-for="ToDate" type="date" class="form-control" required />
                         <span asp-validation-for="ToDate" class="text-danger small"></span>
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label fw-bold">سبب الزيارة</label>
-                    <input asp-for="Purpose" class="form-control" />
+                    <input asp-for="Purpose" class="form-control" required />
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label fw-bold">العنوان في السعودية</label>
-                    <input asp-for="AddressInSaudi" class="form-control" />
+                    <input asp-for="AddressInSaudi" class="form-control" required />
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label fw-bold">مستندات داعمة</label>
-                    <input asp-for="SupportingDocument" type="file" class="form-control" />
+                    <input asp-for="SupportingDocument" type="file" class="form-control"/>
                 </div>
 
                 <button type="submit" class="btn btn-primary w-100 py-2">

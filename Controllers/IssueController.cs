@@ -13,6 +13,7 @@ namespace AbsherSecure1.Controllers
         [HttpGet]
         public IActionResult NewID()
         {
+
             return View();
         }
 

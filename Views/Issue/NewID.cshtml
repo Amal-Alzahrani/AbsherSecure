@@ -12,19 +12,19 @@
         <!-- الاسم الكامل -->
         <div class="mb-3">
             <label class="form-label">الاسم الكامل</label>
-            <input asp-for="FullName" class="form-control" />
+            <input asp-for="FullName" class="form-control" required />
         </div>
 
         <!-- رقم الهوية -->
         <div class="mb-3">
             <label class="form-label">رقم الهوية</label>
-            <input asp-for="NationalId" class="form-control" pattern="^\d{10}$" title="10 أرقام فقط" placeholder="مثال: 1234567890" />
+            <input asp-for="NationalId" class="form-control" pattern="^\d{10}$" title="10 أرقام فقط" placeholder="مثال: 1234567890" required />
         </div>
 
         <!-- تاريخ الميلاد -->
         <div class="mb-3">
             <label class="form-label">تاريخ الميلاد</label>
-            <input asp-for="DateOfBirth" type="date" class="form-control" />
+            <input asp-for="DateOfBirth" type="date" class="form-control" required />
         </div>
 
         <!-- الجنس -->
@@ -39,19 +39,19 @@
         <!-- المدينة -->
         <div class="mb-3">
             <label class="form-label">المدينة</label>
-            <input asp-for="City" class="form-control" />
+            <input asp-for="City" class="form-control" required />
         </div>
 
         <!-- الحي -->
         <div class="mb-3">
             <label class="form-label">الحي</label>
-            <input asp-for="District" class="form-control" />
+            <input asp-for="District" class="form-control" required />
         </div>
 
         <!-- الشارع -->
         <div class="mb-3">
             <label class="form-label">الشارع</label>
-            <input asp-for="Street" class="form-control" />
+            <input asp-for="Street" class="form-control" required />
         </div>
 
         <!-- فصيلة الدم -->

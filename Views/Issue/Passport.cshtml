@@ -12,13 +12,13 @@
         <!-- الاسم -->
         <div class="mb-3">
             <label class="form-label">الاسم الكامل</label>
-            <input asp-for="FullName" class="form-control" />
+            <input asp-for="FullName" class="form-control" required />
         </div>
 
         <!-- رقم الهوية -->
         <div class="mb-3">
             <label class="form-label">رقم الهوية</label>
-            <input asp-for="NationalId" class="form-control" pattern="^\d{10}$" placeholder="10 أرقام" />
+            <input asp-for="NationalId" class="form-control" pattern="^\d{10}$" placeholder="10 أرقام" required />
         </div>
 
         <!-- مدة الصلاحية -->
@@ -33,13 +33,13 @@
         <!-- طريقة التسليم -->
         <div class="mb-3">
             <label class="form-label">طريقة التسليم</label>
-            <input asp-for="DeliveryMethod" class="form-control" placeholder="مثال: عبر البريد" />
+            <input asp-for="DeliveryMethod" class="form-control" placeholder="مثال: عبر البريد" required />
         </div>
 
         <!-- عنوان التوصيل -->
         <div class="mb-3">
             <label class="form-label">عنوان التوصيل</label>
-            <input asp-for="DeliveryAddress" class="form-control" />
+            <input asp-for="DeliveryAddress" class="form-control" required />
         </div>
 
         <button type="submit" class="btn btn-primary w-100">إصدار الجواز</button>

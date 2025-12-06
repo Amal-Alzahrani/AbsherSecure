@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\AbsherSecure1.props" />
+</Project>
