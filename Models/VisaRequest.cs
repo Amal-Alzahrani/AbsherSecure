@@ -24,5 +24,7 @@ namespace AbsherSecure1.Models
         public string AddressInSaudi { get; set; }
         [NotMapped]
         public IFormFile SupportingDocument { get; set; }
+        [NotMapped]
+        public IFormFile Photo { get; set; }
     }
 }

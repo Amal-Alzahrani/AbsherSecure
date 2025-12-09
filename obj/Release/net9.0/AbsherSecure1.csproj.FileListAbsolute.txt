@@ -224,10 +224,10 @@ C:\AbsherSecure1\obj\Release\net9.0\staticwebassets\msbuild.build.AbsherSecure1.
 C:\AbsherSecure1\obj\Release\net9.0\staticwebassets\msbuild.buildMultiTargeting.AbsherSecure1.props
 C:\AbsherSecure1\obj\Release\net9.0\staticwebassets\msbuild.buildTransitive.AbsherSecure1.props
 C:\AbsherSecure1\obj\Release\net9.0\staticwebassets.pack.json
-C:\AbsherSecure1\obj\Release\net9.0\staticwebassets.upToDateCheck.txt
 C:\AbsherSecure1\obj\Release\net9.0\AbsherSe.52ADE1B5.Up2Date
 C:\AbsherSecure1\obj\Release\net9.0\AbsherSecure1.dll
 C:\AbsherSecure1\obj\Release\net9.0\refint\AbsherSecure1.dll
 C:\AbsherSecure1\obj\Release\net9.0\AbsherSecure1.pdb
 C:\AbsherSecure1\obj\Release\net9.0\AbsherSecure1.genruntimeconfig.cache
 C:\AbsherSecure1\obj\Release\net9.0\ref\AbsherSecure1.dll
+C:\AbsherSecure1\bin\Release\net9.0\global.json

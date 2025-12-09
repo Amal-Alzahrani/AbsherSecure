@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AbsherSecure1.Models
 {
@@ -9,5 +10,7 @@ namespace AbsherSecure1.Models
 
         public string DeliveryMethod { get; set; }
         public string DeliveryAddress { get; set; }
+        [NotMapped]
+        public IFormFile Photo { get; set; }
     }
 }

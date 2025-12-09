@@ -27,7 +27,11 @@
             <label>رقم الجوال</label>
             <input name="Phone" value="@Model.Phone" />
         </div>
-
+        <!-- صورة شخصية -->
+        <div class="form-row">
+            <label class="form-label">صورة شخصية</label>
+            <input asp-for="Photo" type="file" class="form-control" />
+        </div>
         <button type="submit" class="btn btn-primary">حفظ التعديل والانتقال للتحقق</button>
     </form>
 </div

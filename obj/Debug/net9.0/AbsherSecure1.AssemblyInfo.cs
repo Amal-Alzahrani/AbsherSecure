@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AbsherSecure1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+23b1491bf266ff57926fabaebf5b6115cd4eff4c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+38012bafe8a38c58ab00cf65a27f20f2af65e2ae")]
 [assembly: System.Reflection.AssemblyProductAttribute("AbsherSecure1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AbsherSecure1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
